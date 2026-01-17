@@ -1,13 +1,14 @@
-'use client';
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Calendar, Clock, User, ArrowLeft, Tag } from "lucide-react";
+import connectDB from "@/lib/mongodb"; // Import DB connection
+import Post from "@/models/Post"; // Import Model
+import { notFound } from "next/navigation";
 
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import { Calendar, Clock, User, ArrowLeft, Tag } from 'lucide-react';
-import { motion } from 'framer-motion';
-
+// Define the shape of the data based on your Mongoose Schema
 type BlogPost = {
-  id: number;
+  _id: string; // MongoDB uses _id, not id
   title: string;
   excerpt: string;
   category: string;
@@ -17,40 +18,36 @@ type BlogPost = {
   imageUrl: string;
 };
 
-export default function BlogDetailsPage({
+export default async function BlogDetailsPage({
   params,
 }: {
   params: Promise<{ blog: string }>;
 }) {
-  // ✅ unwrap params Promise
-  const { blog } = React.use(params);
-  const blogId = Number(blog);
+  // 1. Await the params object
+  const { blog } = await params;
 
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [loading, setLoading] = useState(true);
+  // 2. Connect to DB
+  await connectDB();
 
-  useEffect(() => {
-    fetch('/blog.json')
-      .then((res) => res.json())
-      .then((data: BlogPost[]) => {
-        const found = data.find((item) => item.id === blogId);
-        setPost(found ?? null);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.error('Failed to fetch blog:', err);
-        setLoading(false);
-      });
-  }, [blogId]);
-
-  if (loading) {
+  // 3. Fetch directly from DB (No API call needed)
+  // We use .lean() to convert the Mongoose object to a plain JS object
+  let post: BlogPost | null = null;
+  
+  try {
+    post = await Post.findOne({ _id: blog }).lean();
+  } catch (error) {
+    // Handle invalid ID formats (like passing "abc" where an ObjectID is expected)
     return (
-      <div className="min-h-screen flex items-center justify-center text-gray-500">
-        Loading article...
-      </div>
+        <div className="min-h-screen flex flex-col items-center justify-center">
+            <h2 className="text-2xl font-bold text-gray-900">Invalid Post ID</h2>
+            <Link href="/blogs" className="mt-4 text-orange-600 font-semibold">
+            ← Back to blogs
+            </Link>
+        </div>
     );
   }
 
+  // 4. Handle 404 if not found
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center">
@@ -87,12 +84,8 @@ export default function BlogDetailsPage({
         <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Content */}
-      <motion.div
-        initial={{ opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="relative -mt-24 mx-auto max-w-3xl bg-white rounded-3xl shadow-xl px-6 py-10 sm:px-10"
-      >
+      {/* Content - Removed motion.div to make this a Server Component */}
+      <div className="relative -mt-24 mx-auto max-w-3xl bg-white rounded-3xl shadow-xl px-6 py-10 sm:px-10">
         <span className="inline-flex rounded-full bg-orange-100 px-4 py-1 text-xs font-semibold text-orange-600">
           {post.category}
         </span>
@@ -128,7 +121,7 @@ export default function BlogDetailsPage({
             <Tag size={12} /> {post.category}
           </span>
         </div>
-      </motion.div>
+      </div>
     </article>
   );
 }

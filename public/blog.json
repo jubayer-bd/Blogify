@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "title": "The Future of Server Components",
     "excerpt": "Understanding how React Server Components change the way we build web applications for performance.",
     "category": "Engineering",
@@ -10,7 +9,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": 2,
     "title": "Mastering Tailwind Grid Layouts",
     "excerpt": "Stop struggling with CSS Grid. Here is a comprehensive guide to building complex layouts instantly.",
     "category": "Design",
@@ -20,7 +18,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": 3,
     "title": "Why I Switched to Neovim",
     "excerpt": "It was a painful journey, but the productivity gains were absolutely worth the learning curve.",
     "category": "Productivity",
@@ -30,7 +27,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1542831371-29b0f74f9713?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": 4,
     "title": "Understanding TypeScript Generics",
     "excerpt": "Generics can be intimidating. Let's break them down into simple, reusable patterns you can use today.",
     "category": "Tutorial",
@@ -40,7 +36,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1516116216624-53e697fedbea?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": 5,
     "title": "The Psychology of UI Color",
     "excerpt": "How choosing the right primary color, like Orange-600, affects user trust and conversion rates.",
     "category": "Design",
@@ -50,7 +45,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1505330622279-bf7d7fc918f4?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": 6,
     "title": "Deploying Next.js on Edge",
     "excerpt": "A step-by-step guide to deploying your application to the edge for global low-latency.",
     "category": "DevOps",
@@ -60,7 +54,7 @@
     "imageUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": 7,
+    
     "title": "Clean Architecture in React",
     "excerpt": "Keeping your components decoupled and testable as your application scales to enterprise levels.",
     "category": "Architecture",
@@ -70,7 +64,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": 8,
     "title": "SEO for Modern SPAs",
     "excerpt": "Ensuring your single page application ranks high on Google using modern metadata strategies.",
     "category": "Marketing",
@@ -80,7 +73,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": 9,
     "title": "State Management in 2026",
     "excerpt": "Do we still need Redux? Exploring the landscape of Zustand, Jotai, and React Context.",
     "category": "Engineering",
@@ -90,7 +82,6 @@
     "imageUrl": "https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=800&auto=format&fit=crop"
   },
   {
-    "id": 10,
     "title": "Digital Nomad Lifestyle",
     "excerpt": "Tips and tricks for working remotely from coffee shops around the world without losing focus.",
     "category": "Life",
