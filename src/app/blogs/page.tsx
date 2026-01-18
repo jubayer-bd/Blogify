@@ -1,7 +1,7 @@
 import { Clock, ArrowRight, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import connectDB from "@/lib/mongodb";
+import { connectDB } from "@/lib/mongodb";
 import Post from "@/models/Post";
 
 export const dynamic = "force-dynamic"; // Optional: Ensures the page updates if new posts are added

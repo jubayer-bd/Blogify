@@ -6,7 +6,7 @@ const trending = [
 
 export default function TrendingWidget() {
   return (
-    <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 max-w-sm">
+    <div className="bg-white rounded-2xl p-6 shadow-sm   max-w-7xl mx-auto">
       <h3 className="font-bold text-gray-900 mb-6 flex items-center gap-2">
         <span className="w-2 h-6 bg-orange-600 rounded-full"></span>
         Trending Now

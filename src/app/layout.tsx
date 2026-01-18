@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import AuthProvider from "@/components/AuthProvider"; // Import the provider
+import { Toaster } from "react-hot-toast";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,8 +34,29 @@ export default function RootLayout({
       >
         {/* Wrap everything in AuthProvider so Navbar and Pages can access session */}
         <AuthProvider>
+          <Toaster
+            toastOptions={{
+              success: {
+                style: {
+                  background: "white",
+                  // padding: "16px",
+                  // color: "#FFA500",
+                },
+                iconTheme: {
+                  primary: "#EF6C00",
+                  secondary: "white",
+                },
+              },
+              error: {
+                style: {
+                  background: "red",
+                },
+              },
+            }}
+          />
           <Navbar />
           <main>{children}</main>
+          <Footer/>
         </AuthProvider>
       </body>
     </html>

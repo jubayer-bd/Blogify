@@ -2,8 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, User, ArrowLeft, Tag } from "lucide-react";
-import connectDB from "@/lib/mongodb"; // Import DB connection
-import Post from "@/models/Post"; // Import Model
+import { connectDB } from "@/lib/mongodb";import Post from "@/models/Post"; // Import Model
 import { notFound } from "next/navigation";
 
 // Define the shape of the data based on your Mongoose Schema

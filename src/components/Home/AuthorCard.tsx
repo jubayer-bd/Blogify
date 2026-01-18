@@ -1,6 +1,6 @@
 export default function AuthorCard() {
   return (
-    <div className="my-12 p-8 bg-gray-50 rounded-3xl flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
+    <div className="my-12 p-8 bg-gray-50 max-w-7xl mx-auto rounded-3xl flex flex-col sm:flex-row items-center sm:items-start gap-6 text-center sm:text-left">
       <div className="relative">
         <div className="w-20 h-20 rounded-full bg-gray-300 overflow-hidden ring-4 ring-white shadow-sm">
            <img 

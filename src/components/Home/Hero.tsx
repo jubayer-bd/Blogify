@@ -1,5 +1,5 @@
-import Link from 'next/link';
-
+"use client";
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className="relative overflow-hidden bg-white py-24 sm:py-32">
@@ -22,18 +22,27 @@ export default function Hero() {
             </span>
           </h1>
           <p className="mt-6 text-lg leading-8 text-gray-600">
-            Thoughts on code, design, and the future of the web. 
-            Join me on this journey of continuous learning.
+            Thoughts on code, design, and the future of the web. Join me on this
+            journey of continuous learning.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <Link
-              href="/blog"
+              href="/blogs"
               className="rounded-md bg-orange-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-orange-600 transition-all duration-300 hover:scale-105"
             >
               Read the Blog
             </Link>
-            <Link href="/about" className="text-sm font-semibold leading-6 text-gray-900 group">
-              Learn more <span aria-hidden="true" className="inline-block transition-transform group-hover:translate-x-1">→</span>
+            <Link
+              href="/about"
+              className="text-sm font-semibold leading-6 text-gray-900 group"
+            >
+              Learn more{" "}
+              <span
+                aria-hidden="true"
+                className="inline-block transition-transform group-hover:translate-x-1"
+              >
+                →
+              </span>
             </Link>
           </div>
         </div>

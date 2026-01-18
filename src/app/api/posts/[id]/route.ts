@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
-import connectDB from "@/lib/mongodb";
-import Post from "@/models/Post";
+import { connectDB } from "@/lib/mongodb";import Post from "@/models/Post";
 
 // Define the type for the params context
 type Props = {

@@ -8,17 +8,18 @@ import { useSession, signOut } from "next-auth/react"; // Import NextAuth hooks
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import Image from "next/image";
+// import { data } from "framer-motion/client";
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "Blogs", href: "/blogs" },
-  { name: "Dashboard", href: "/dashboard/user" },
+  { name: "Post", href: "/add-post" },
+  { name: "About", href: "/about" },
 ];
 
 export default function Navbar() {
   const pathname = usePathname();
   const { data: session, status } = useSession(); // Access user session data
-
   // Helper function to handle Sign Out
   const handleLogout = () => {
     signOut({ callbackUrl: "/login" });
