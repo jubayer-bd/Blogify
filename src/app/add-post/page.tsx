@@ -30,7 +30,7 @@ interface PostFormData {
 export default function AddPostPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { data: session } = useSession();
-  console.log(session?.user?.email);
+  // console.log(session?.user?.email);
 
   const {
     register,

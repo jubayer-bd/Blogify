@@ -31,7 +31,7 @@ export const authOptions: AuthOptions = {
           // Return the user object (this will be saved in the token)
           return user;
         } catch (error) {
-          console.log("Error: ", error);
+          // console.log("Error: ", error);
           return null;
         }
       },

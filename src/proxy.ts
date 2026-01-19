@@ -1,8 +1,10 @@
-// middleware.ts
+// proxy.ts
 import { withAuth } from "next-auth/middleware";
 
-export const middleware = withAuth(
-  function middleware(req) {
+// Change the export name from 'middleware' to 'proxy'
+export const proxy = withAuth(
+  function proxy(req) {
+    // Your custom logic (if any) goes here
   },
   {
     pages: {
